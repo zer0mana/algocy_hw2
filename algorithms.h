@@ -20,9 +20,4 @@ std::pair<int, std::vector<size_t>> KMPRefinedTime(
         const std::string &mask,
         const std::vector<char> &alphabet);
 
-std::pair<int, std::vector<size_t>> KMPAutomatonTime(
-        const std::string &text,
-        const std::string &mask,
-        const std::vector<char> &alphabet);
-
 #endif

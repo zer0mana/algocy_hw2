@@ -100,21 +100,3 @@ std::pair<int, std::vector<size_t>> KMPRefinedTime(const string &text,
     return {num_of_op, result};
 }
 
-/// Автомат КМП.
-/// \param text - текст.
-/// \param mask - шаблон поиска.
-/// \param alphabet - алфавит.
-/// \return Пару количества операций сравнения и вектора индексов вхождений.
-std::pair<int, std::vector<size_t>> KMPAutomatonTime(const string &text,
-                                                        const string &mask,
-                                                        const std::vector<char> &alphabet) {
-    Automaton autoKMP(mask, alphabet);
-    std::vector<size_t> result;
-    for (size_t i = 0; i < text.size(); ++i) {
-        if (autoKMP(text[i])) {
-            result.push_back(i - mask.size() + 1);
-        }
-    }
-    return {autoKMP.getNumOfOp(), result};
-}
-

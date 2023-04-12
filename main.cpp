@@ -50,21 +50,6 @@ void ShortBinaryAlphabet(Generator &generator, std::string &short_binary_text, s
 
         std::cout << res << ',';
     }
-
-    std::cout << '\n' << "KMP automaton" << '\n';
-    for (size_t size = 100; size <= 3000; size += 100) {
-        int res = 0;
-
-        auto pattern = generator.GetShortBinaryPattern(size);
-
-        for (int i = 0; i < 10; i++) {
-            res += KMPAutomatonTime(short_binary_text, pattern, binary_alphabet).first;
-        }
-
-        res /= 10;
-
-        std::cout << res << ',';
-    }
 }
 
 void ShortDNKAlphabet(Generator &generator, std::string &short_dnk_text, std::vector<char> &dnk_alphabet) {
@@ -108,21 +93,6 @@ void ShortDNKAlphabet(Generator &generator, std::string &short_dnk_text, std::ve
 
         for (int i = 0; i < 10; i++) {
             res += KMPRefinedTime(short_dnk_text, pattern, dnk_alphabet).first;
-        }
-
-        res /= 10;
-
-        std::cout << res << ',';
-    }
-
-    std::cout << '\n' << "KMP automaton" << '\n';
-    for (size_t size = 100; size <= 3000; size += 100) {
-        int res = 0;
-
-        auto pattern = generator.GetShortDNKPattern(size);
-
-        for (int i = 0; i < 10; i++) {
-            res += KMPAutomatonTime(short_dnk_text, pattern, dnk_alphabet).first;
         }
 
         res /= 10;
@@ -178,21 +148,6 @@ void LongBinaryAlphabet(Generator &generator, std::string &long_binary_text, std
 
         std::cout << res << ',';
     }
-
-    std::cout << '\n' << "KMP automaton" << '\n';
-    for (size_t size = 100; size <= 3000; size += 100) {
-        int res = 0;
-
-        auto pattern = generator.GetLongBinaryPattern(size);
-
-        for (int i = 0; i < 10; i++) {
-            res += KMPAutomatonTime(long_binary_text, pattern, binary_alphabet).first;
-        }
-
-        res /= 10;
-
-        std::cout << res << ',';
-    }
 }
 
 void LongDNKAlphabet(Generator &generator, std::string &long_dnk_text, std::vector<char> &dnk_alphabet) {
@@ -236,21 +191,6 @@ void LongDNKAlphabet(Generator &generator, std::string &long_dnk_text, std::vect
 
         for (int i = 0; i < 10; i++) {
             res += KMPRefinedTime(long_dnk_text, pattern, dnk_alphabet).first;
-        }
-
-        res /= 10;
-
-        std::cout << res << ',';
-    }
-
-    std::cout << '\n' << "KMP automaton" << '\n';
-    for (size_t size = 100; size <= 3000; size += 100) {
-        int res = 0;
-
-        auto pattern = generator.GetLongBinaryPattern(size);
-
-        for (int i = 0; i < 10; i++) {
-            res += KMPAutomatonTime(long_dnk_text, pattern, dnk_alphabet).first;
         }
 
         res /= 10;
